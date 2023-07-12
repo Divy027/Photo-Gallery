@@ -3,14 +3,14 @@ import axios from 'axios';
 import Pics from './Pics';
 function App() {
   const [Catergory,setCatergory] = useState('');
-  const [Photos,setPhotos] = useState([]);
-  const [IsError ,setIsError] = useState(false);
+  const [Photos,setPhotos] = useState([]);  //to add data from api
+  const [IsError ,setIsError] = useState(false);  //settting error
   
   const API = import.meta.env.VITE_API_KEY;
 
   const FetchPhotos = async()=> {
     try {
-      setIsError(false);
+      setIsError(false);  
       console.log("getting photos ...")
 
       const response = await axios.get(
@@ -21,7 +21,7 @@ function App() {
       setPhotos(response.data.results);
 
       console.log("Got Photos!");
-      if(response.data.results.length === 0){
+      if(response.data.results.length === 0){  //if not correct category name by user
         setIsError(true);
       }
     } 
@@ -33,8 +33,8 @@ function App() {
 
   }
   const RenderPics = ()=> {
-    return Photos.map((photo)=> (
-      <Pics key={photo.id} keys={photo.id} src={photo.urls.small} FullSrc={photo.urls.full} alt={photo.alt_description} photographer={photo.user.name} profileURL = {photo.user.profile_image.small} description={photo.alt_description}/>
+    return Photos.map((photo)=> ( //iterating over array
+      <Pics key={photo.id}  src={photo.urls.small} FullSrc={photo.urls.full} alt={photo.alt_description} photographer={photo.user.name} profileURL = {photo.user.profile_image.small} description={photo.alt_description}/>
     )
 
     )
