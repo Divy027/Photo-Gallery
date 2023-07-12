@@ -1,8 +1,8 @@
 import React from "react";
 
-const Pics = ({keys, src,FullSrc, alt, photographer,profileURL, description })=> {
+const Pics = ({ src,FullSrc, alt, photographer,profileURL, description })=> {
     return (
-        <div key= {keys} className="p-4"> 
+        <div className="p-4"> 
             <div className="relative  group">
                 <img  src={src} alt={alt} className="w-full h-32 object-cover rounded"/>
 
