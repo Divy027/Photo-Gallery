@@ -62,7 +62,7 @@ function App() {
              <div className='grid grid-row sm:grid-cols-3 md:grid-cols-4 '>   {RenderPics()}
              </div>
              : <p className='font-lg text-red-600 font-bold'> 
-                   Enter the correct name or wait for some time 
+                   Enter the correct category name or wait for some time 
                </p>
           }
          
