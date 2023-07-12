@@ -58,7 +58,7 @@ function App() {
             className=' text-sky-500 border  border-sky-500 hover:text-white hover:bg-sky-500 px-4 py-2 rounded-full mt-4'> Search
           </button>
           {
-            IsError!== true?
+            IsError!== true?  //if error occured then render error message otherwise render grid
              <div className='grid grid-row sm:grid-cols-3 md:grid-cols-4 '>   {RenderPics()}
              </div>
              : <p className='font-lg text-red-600 font-bold'> 
