@@ -50,6 +50,10 @@ function App() {
             placeholder='Enter Catergory Name'
             value={Catergory}
             onChange={(e)=>setCatergory(e.target.value) }
+            onKeyDown={(e)=> {
+              //enter pressed     
+              e.keyCode ===13  && FetchPhotos();
+            }}
             className='placeholder:italic placeholder:text-slate-400  border border-grey-400 px-2 py-1 mr-2 rounded focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 text-sm md:text-lg'
 
           /> 
